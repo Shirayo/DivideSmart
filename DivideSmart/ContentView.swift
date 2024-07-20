@@ -10,52 +10,55 @@ import SwiftData
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
-
+    @State var selectedTab: Tab = .main
+    
     var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("\(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
-                    }
-                }
-                .onDelete(perform: deleteItems)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
-            }
-        } detail: {
-            Text("Select an item")
+        VStack {
+            TabView(selection: $selectedTab,
+                    content:  {
+                Text("Tab Content 1")
+                    .tag(Tab.main)
+                    .toolbar(.hidden, for: .tabBar)
+                
+                Text("Tab Content 2")
+                    .tag(Tab.profile)
+                    .toolbar(.hidden, for: .tabBar)
+            })
+            
+            CustomTabBar()
         }
     }
 
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
+    @ViewBuilder
+    func CustomTabBar() -> some View {
+        HStack {
+            ForEach(Tab.allCases, id: \.self) { tab in
+                TabItem(tab: tab, selectedTab: $selectedTab)
             }
         }
+    }
+    
+}
+
+struct TabItem: View {
+    
+    var tab: Tab
+    @Binding var selectedTab: Tab
+    
+    var body: some View {
+        Button(action:{
+            selectedTab = tab
+        }, label: {
+            VStack {
+                Image(systemName: tab.systemImage)
+                
+                Text(tab.rawValue)
+            }
+        })
     }
 }
 
+
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
 }
