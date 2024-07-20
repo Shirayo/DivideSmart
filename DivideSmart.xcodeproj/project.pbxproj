@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1854698C2C4C0B2100AD9144 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1854698B2C4C0B2100AD9144 /* Tab.swift */; };
+		1854698E2C4C533800AD9144 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1854698D2C4C533800AD9144 /* ProfileView.swift */; };
+		185469902C4C5E1B00AD9144 /* DivideListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1854698F2C4C5E1B00AD9144 /* DivideListView.swift */; };
 		849C59282C455A0700A90AB3 /* DivideSmartApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C59272C455A0700A90AB3 /* DivideSmartApp.swift */; };
 		849C592A2C455A0700A90AB3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C59292C455A0700A90AB3 /* ContentView.swift */; };
 		849C592E2C455A0800A90AB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 849C592D2C455A0800A90AB3 /* Assets.xcassets */; };
@@ -36,6 +38,8 @@
 
 /* Begin PBXFileReference section */
 		1854698B2C4C0B2100AD9144 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
+		1854698D2C4C533800AD9144 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		1854698F2C4C5E1B00AD9144 /* DivideListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivideListView.swift; sourceTree = "<group>"; };
 		849C59242C455A0700A90AB3 /* DivideSmart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DivideSmart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		849C59272C455A0700A90AB3 /* DivideSmartApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivideSmartApp.swift; sourceTree = "<group>"; };
 		849C59292C455A0700A90AB3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -101,6 +105,8 @@
 				849C592D2C455A0800A90AB3 /* Assets.xcassets */,
 				849C592F2C455A0800A90AB3 /* Preview Content */,
 				1854698B2C4C0B2100AD9144 /* Tab.swift */,
+				1854698D2C4C533800AD9144 /* ProfileView.swift */,
+				1854698F2C4C5E1B00AD9144 /* DivideListView.swift */,
 			);
 			path = DivideSmart;
 			sourceTree = "<group>";
@@ -260,7 +266,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1854698E2C4C533800AD9144 /* ProfileView.swift in Sources */,
 				1854698C2C4C0B2100AD9144 /* Tab.swift in Sources */,
+				185469902C4C5E1B00AD9144 /* DivideListView.swift in Sources */,
 				849C592A2C455A0700A90AB3 /* ContentView.swift in Sources */,
 				849C59282C455A0700A90AB3 /* DivideSmartApp.swift in Sources */,
 			);
