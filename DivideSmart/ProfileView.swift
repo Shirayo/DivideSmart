@@ -22,10 +22,13 @@ struct ProfileView: View {
                         .frame(height: 150)
                     Color.orange       
                         .frame(height: 150)
+                    Color.teal
+                        .frame(height: 150)
 
                 }
             }
         }
+//        .ignoresSafeArea()
     }
 }
 

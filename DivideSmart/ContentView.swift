@@ -11,47 +11,53 @@ import SwiftData
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @State var selectedTab: Tab = .main
-    
     @Namespace private var animation
+
+    init() {
+        UITabBar.appearance().isHidden = true
+    }
     
     var body: some View {
-        VStack {
-           
-            
+        VStack(spacing: -32) {
             TabView(selection: $selectedTab,
                     content:  {
                 DivideListView()
                     .tag(Tab.main)
-                    .toolbar(.hidden, for: .tabBar)
-                    .toolbarBackground(.hidden, for: .tabBar)
-
+                
                 ProfileView()
                     .tag(Tab.profile)
-                    .toolbar(.hidden, for: .tabBar)
-                    .toolbarBackground(.hidden, for: .tabBar)
-
             })
             .toolbar(.hidden, for: .tabBar)
             
-            CustomTabBar()
-                .background(.red)
+            CustomTabBar(tint: .blue, unactiveTint: .gray)
         }
+        .ignoresSafeArea()
     }
 
     @ViewBuilder
-    func CustomTabBar() -> some View {
+    func CustomTabBar(tint: Color, unactiveTint: Color) -> some View {
         HStack(alignment: .bottom) {
             ForEach(Tab.allCases, id: \.self) { tab in
                 TabItem(
-                    tint: .red,
-                    unactiveTint: .green,
+                    tint: tint,
+                    unactiveTint: unactiveTint,
                     tab: tab,
-                    selectedTab: $selectedTab,
-                    namespace: animation
+                    animation: animation,
+                    selectedTab: $selectedTab
                 )
             }
         }
-        .animation(.interactiveSpring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.7), value: selectedTab)
+        .padding(.vertical)
+        .padding(.horizontal)
+        .background {
+            Rectangle()
+                .ignoresSafeArea()
+                .foregroundStyle(.white)
+                .shadow(color: tint.opacity(0.2), radius: 5, y: -2)
+                .blur(radius: 2)
+                .padding(.top, 32)
+        }
+        .animation(.interactiveSpring(response: 0.5, dampingFraction: 0.8, blendDuration: 0.5), value: selectedTab)
     }
     
 }
@@ -61,32 +67,32 @@ struct TabItem: View {
     var tint: Color
     var unactiveTint: Color
     var tab: Tab
+    var animation: Namespace.ID
     @Binding var selectedTab: Tab
-    var namespace: Namespace.ID
     
     var body: some View {
         VStack(spacing: 5) {
             Image(systemName: tab.systemImage)
-                .tint(tab == selectedTab ? .white : unactiveTint)
+                .font(.title2)
+                .foregroundStyle(tab == selectedTab ? .white : unactiveTint)
                 .frame(width:  tab == selectedTab ? 58 : 35, height:  tab == selectedTab ? 58 : 35)
                 .background {
                     if tab == selectedTab {
                         Circle()
-                            .tint(tint.gradient)
-                            .matchedGeometryEffect(id: "tab", in: namespace)
+                            .fill(tint.gradient)
+                            .matchedGeometryEffect(id: "activeTab", in: animation)
                     }
                 }
                                             
             Text(tab.rawValue)
                 .font(.caption)
-                .tint(tab == selectedTab ? tint : unactiveTint)
+                .foregroundStyle(tab == selectedTab ? tint : unactiveTint)
+                .clipped()
         }
         .frame(maxWidth: .infinity)
         .contentShape(Rectangle())
         .onTapGesture {
-            withAnimation {
-                selectedTab = tab
-            }
+            selectedTab = tab
         }
     }
 }

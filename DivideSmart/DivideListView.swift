@@ -10,8 +10,13 @@ import SwiftUI
 struct DivideListView: View {
     var body: some View {
         ZStack {
-            Color.yellow
+            VStack {
+                Color.yellow
+                Text("heh")
+                Color.yellow
+            }
         }
+//        .ignoresSafeArea()
     }
 }
 
