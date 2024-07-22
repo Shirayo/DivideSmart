@@ -29,7 +29,7 @@ struct ContentView: View {
             })
             .toolbar(.hidden, for: .tabBar)
             
-            CustomTabBar(tint: .blue, unactiveTint: .gray)
+            CustomTabBar(tint: .white, unactiveTint: .black)
         }
         .ignoresSafeArea()
     }
@@ -52,9 +52,9 @@ struct ContentView: View {
         .background {
             Rectangle()
                 .ignoresSafeArea()
-                .foregroundStyle(.white)
-                .shadow(color: tint.opacity(0.2), radius: 5, y: -2)
-                .blur(radius: 2)
+                .foregroundStyle(Color("Background"))
+                .shadow(color: Color("LightShadow"), radius: 5, y: -5)
+//                .blur(radius: 2)
                 .padding(.top, 32)
         }
         .animation(.interactiveSpring(response: 0.5, dampingFraction: 0.8, blendDuration: 0.5), value: selectedTab)
@@ -78,8 +78,10 @@ struct TabItem: View {
                 .frame(width:  tab == selectedTab ? 58 : 35, height:  tab == selectedTab ? 58 : 35)
                 .background {
                     if tab == selectedTab {
-                        Circle()
-                            .fill(tint.gradient)
+                        Circle().fill(Color("Background"))
+                            .frame(width: 50, height: 50)
+                            .shadow(color: Color("LightShadow"), radius: 4, x: -4, y: -4)
+                            .shadow(color: Color("DarkShadow"), radius: 4, x: 4, y: 4)
                             .matchedGeometryEffect(id: "activeTab", in: animation)
                     }
                 }

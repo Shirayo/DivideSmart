@@ -10,13 +10,16 @@ import SwiftUI
 struct DivideListView: View {
     var body: some View {
         ZStack {
-            VStack {
-                Color.yellow
-                Text("heh")
-                Color.yellow
-            }
+            Color("Background")
+                  
+            Circle().fill(Color("Background"))
+                .frame(width: 50, height: 50)
+                .shadow(color: Color("LightShadow"), radius: 4, x: -4, y: -4)
+                .shadow(color: Color("DarkShadow"), radius: 4, x: 4, y: 4)
+            
+            Image(systemName: "person.fill")
+                .foregroundStyle(.gray)
         }
-//        .ignoresSafeArea()
     }
 }
 
