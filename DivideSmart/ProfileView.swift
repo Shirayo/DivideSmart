@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import ShirayoPolymorphism
 
 struct ProfileView: View {
     var body: some View {
@@ -24,7 +25,7 @@ struct ProfileView: View {
                         .frame(height: 150)
                     Color.teal
                         .frame(height: 150)
-
+                    
                 }
             }
         }

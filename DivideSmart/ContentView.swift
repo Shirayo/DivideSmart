@@ -8,6 +8,7 @@
 import SwiftUI
 import SwiftData
 
+
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @State var selectedTab: Tab = .main
@@ -57,7 +58,7 @@ struct ContentView: View {
 //                .blur(radius: 2)
                 .padding(.top, 32)
         }
-        .animation(.interactiveSpring(response: 0.5, dampingFraction: 0.8, blendDuration: 0.5), value: selectedTab)
+        .animation(.interactiveSpring(response: 0.3, dampingFraction: 0.8, blendDuration: 0.5), value: selectedTab)
     }
     
 }
@@ -74,7 +75,7 @@ struct TabItem: View {
         VStack(spacing: 5) {
             Image(systemName: tab.systemImage)
                 .font(.title2)
-                .foregroundStyle(tab == selectedTab ? .white : unactiveTint)
+                .foregroundStyle(tab == selectedTab ? tint : unactiveTint)
                 .frame(width:  tab == selectedTab ? 58 : 35, height:  tab == selectedTab ? 58 : 35)
                 .background {
                     if tab == selectedTab {

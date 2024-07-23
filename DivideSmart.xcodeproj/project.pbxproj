@@ -77,6 +77,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18940FCE2C4FBEAE00AECA57 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		849C591B2C455A0700A90AB3 = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +91,7 @@
 				849C59392C455A0800A90AB3 /* DivideSmartTests */,
 				849C59432C455A0800A90AB3 /* DivideSmartUITests */,
 				849C59252C455A0700A90AB3 /* Products */,
+				18940FCE2C4FBEAE00AECA57 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
