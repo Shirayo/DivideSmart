@@ -8,9 +8,7 @@
 import SwiftUI
 import SwiftData
 
-
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
     @State var selectedTab: Tab = .main
     @Namespace private var animation
 
@@ -31,6 +29,7 @@ struct ContentView: View {
             .toolbar(.hidden, for: .tabBar)
             
             CustomTabBar(tint: .white, unactiveTint: .black)
+            
         }
         .ignoresSafeArea()
     }

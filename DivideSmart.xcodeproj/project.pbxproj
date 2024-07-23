@@ -160,6 +160,8 @@
 			dependencies = (
 			);
 			name = DivideSmart;
+			packageProductDependencies = (
+			);
 			productName = DivideSmart;
 			productReference = 849C59242C455A0700A90AB3 /* DivideSmart.app */;
 			productType = "com.apple.product-type.application";
@@ -232,6 +234,8 @@
 				Base,
 			);
 			mainGroup = 849C591B2C455A0700A90AB3;
+			packageReferences = (
+			);
 			productRefGroup = 849C59252C455A0700A90AB3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";

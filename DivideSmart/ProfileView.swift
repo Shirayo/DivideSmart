@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import ShirayoPolymorphism
 
 struct ProfileView: View {
     var body: some View {
