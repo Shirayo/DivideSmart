@@ -19,10 +19,29 @@ struct DivideListView: View {
             
             Image(systemName: "person.fill")
                 .foregroundStyle(.gray)
+                
         }
     }
 }
 
 #Preview {
     DivideListView()
+}
+
+
+struct testModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        VStack {
+            content
+            
+            content
+        }
+    }
+    
+}
+
+extension View {
+    func testMod() -> some View {
+        modifier(testModifier())
+    }
 }
