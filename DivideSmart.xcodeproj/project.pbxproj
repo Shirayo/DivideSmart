@@ -235,6 +235,7 @@
 			);
 			mainGroup = 849C591B2C455A0700A90AB3;
 			packageReferences = (
+				18C11EC42C50344E002286EC /* XCRemoteSwiftPackageReference "testLibraryiOS" */,
 			);
 			productRefGroup = 849C59252C455A0700A90AB3 /* Products */;
 			projectDirPath = "";
@@ -612,6 +613,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		18C11EC42C50344E002286EC /* XCRemoteSwiftPackageReference "testLibraryiOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Shirayo/testLibraryiOS.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 849C591C2C455A0700A90AB3 /* Project object */;
 }

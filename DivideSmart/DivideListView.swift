@@ -6,16 +6,15 @@
 //
 
 import SwiftUI
+import testLibrary
 
 struct DivideListView: View {
     var body: some View {
         ZStack {
             Color("Background")
                   
-            Circle().fill(Color("Background"))
-                .frame(width: 50, height: 50)
-                .shadow(color: Color("LightShadow"), radius: 4, x: -4, y: -4)
-                .shadow(color: Color("DarkShadow"), radius: 4, x: 4, y: 4)
+            Circle()
+                .fill(Color("Background"))
             
             Image(systemName: "person.fill")
                 .foregroundStyle(.gray)
