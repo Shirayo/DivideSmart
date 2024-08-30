@@ -10,6 +10,7 @@
 		1854698C2C4C0B2100AD9144 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1854698B2C4C0B2100AD9144 /* Tab.swift */; };
 		1854698E2C4C533800AD9144 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1854698D2C4C533800AD9144 /* ProfileView.swift */; };
 		185469902C4C5E1B00AD9144 /* DivideListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1854698F2C4C5E1B00AD9144 /* DivideListView.swift */; };
+		18C11EC72C503758002286EC /* testLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 18C11EC62C503758002286EC /* testLibrary */; };
 		849C59282C455A0700A90AB3 /* DivideSmartApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C59272C455A0700A90AB3 /* DivideSmartApp.swift */; };
 		849C592A2C455A0700A90AB3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849C59292C455A0700A90AB3 /* ContentView.swift */; };
 		849C592E2C455A0800A90AB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 849C592D2C455A0800A90AB3 /* Assets.xcassets */; };
@@ -57,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18C11EC72C503758002286EC /* testLibrary in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,6 +163,7 @@
 			);
 			name = DivideSmart;
 			packageProductDependencies = (
+				18C11EC62C503758002286EC /* testLibrary */,
 			);
 			productName = DivideSmart;
 			productReference = 849C59242C455A0700A90AB3 /* DivideSmart.app */;
@@ -235,7 +238,7 @@
 			);
 			mainGroup = 849C591B2C455A0700A90AB3;
 			packageReferences = (
-				18C11EC42C50344E002286EC /* XCRemoteSwiftPackageReference "testLibraryiOS" */,
+				18C11EC52C5036FA002286EC /* XCRemoteSwiftPackageReference "testLibraryiOS" */,
 			);
 			productRefGroup = 849C59252C455A0700A90AB3 /* Products */;
 			projectDirPath = "";
@@ -615,7 +618,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		18C11EC42C50344E002286EC /* XCRemoteSwiftPackageReference "testLibraryiOS" */ = {
+		18C11EC52C5036FA002286EC /* XCRemoteSwiftPackageReference "testLibraryiOS" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Shirayo/testLibraryiOS.git";
 			requirement = {
@@ -624,6 +627,14 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		18C11EC62C503758002286EC /* testLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 18C11EC52C5036FA002286EC /* XCRemoteSwiftPackageReference "testLibraryiOS" */;
+			productName = testLibrary;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 849C591C2C455A0700A90AB3 /* Project object */;
 }

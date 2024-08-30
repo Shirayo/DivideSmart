@@ -10,15 +10,24 @@ import testLibrary
 
 struct DivideListView: View {
     var body: some View {
-        ZStack {
+        ZStack(alignment: .center) {
             Color("Background")
-                  
-            Circle()
-                .fill(Color("Background"))
             
-            Image(systemName: "person.fill")
-                .foregroundStyle(.gray)
+            VStack {
+                Circle()
+                    .fill(Color("Background"))
+                    .frame(width: 200, height: 200)
+                    .makeNeuromorphic(tint: Color("Background"))
                 
+                RoundedRectangle(cornerRadius: 10)
+                    .fill(Color("Background"))
+                    .frame(height: 200)
+                    .makeNeuromorphic(tint: Color("Background"))
+                    
+                Image(systemName: "person.fill")
+                    .foregroundStyle(.gray)
+                    .makeNeuromorphic(tint: Color("Background"))
+            }
         }
     }
 }
