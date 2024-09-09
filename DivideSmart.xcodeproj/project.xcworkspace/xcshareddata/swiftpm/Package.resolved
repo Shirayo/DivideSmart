@@ -1,0 +1,15 @@
+{
+  "originHash" : "9acba74c7215ac8cb90b79d01c9da6aae0bac1c927da3b1d0cca0d8e269677bf",
+  "pins" : [
+    {
+      "identity" : "testlibraryios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Shirayo/testLibraryiOS.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "f6bae10e65279678717f55d48cb644b3e38ca362"
+      }
+    }
+  ],
+  "version" : 3
+}

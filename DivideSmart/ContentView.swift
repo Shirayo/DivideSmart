@@ -17,7 +17,7 @@ struct ContentView: View {
     }
     
     var body: some View {
-        VStack(spacing: -32) {
+        VStack(spacing: 0) {
             TabView(selection: $selectedTab,
                     content:  {
                 DivideListView()
@@ -28,7 +28,10 @@ struct ContentView: View {
             })
             .toolbar(.hidden, for: .tabBar)
             
-            CustomTabBar(tint: .white, unactiveTint: .black)
+            CustomTabBar(
+                tint: Color("MainTextColor"),
+                unactiveTint: Color("MainTextColor")
+            )
             
         }
         .ignoresSafeArea()
@@ -51,11 +54,14 @@ struct ContentView: View {
         .padding(.horizontal)
         .background {
             Rectangle()
-                .ignoresSafeArea()
-                .foregroundStyle(Color("Background"))
-                .shadow(color: Color("LightShadow"), radius: 5, y: -5)
-//                .blur(radius: 2)
-                .padding(.top, 32)
+                .fill(Color("MainColor"))
+                .background {
+                    Rectangle()
+                        .offset(y: -10)
+                        .fill(Color("MainColor"))
+                        .brightness(0.05)
+                        .blur(radius: 10)
+                }
         }
         .animation(.interactiveSpring(response: 0.3, dampingFraction: 0.8, blendDuration: 0.5), value: selectedTab)
     }
@@ -75,19 +81,16 @@ struct TabItem: View {
             Image(systemName: tab.systemImage)
                 .font(.title2)
                 .foregroundStyle(tab == selectedTab ? tint : unactiveTint)
-                .frame(width:  tab == selectedTab ? 58 : 35, height:  tab == selectedTab ? 58 : 35)
+                .frame(width:  tab == selectedTab ? 54 : 34, height:  tab == selectedTab ? 54 : 36)
                 .background {
                     if tab == selectedTab {
-                        Circle().fill(Color("Background"))
-                            .frame(width: 50, height: 50)
-                            .shadow(color: Color("LightShadow"), radius: 4, x: -4, y: -4)
-                            .shadow(color: Color("DarkShadow"), radius: 4, x: 4, y: 4)
-                            .matchedGeometryEffect(id: "activeTab", in: animation)
+                        Circle().fill(Color("MainColor"))
+                            .makeSimpleNeuromorphic()
                     }
                 }
                                             
             Text(tab.rawValue)
-                .font(.caption)
+                .font(.system(size: 10))
                 .foregroundStyle(tab == selectedTab ? tint : unactiveTint)
                 .clipped()
         }
