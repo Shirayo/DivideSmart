@@ -50,7 +50,8 @@ struct ContentView: View {
                 )
             }
         }
-        .padding(.vertical)
+        .padding(.bottom, 24)
+        .padding(.top, 8)
         .padding(.horizontal)
         .background {
             Rectangle()
